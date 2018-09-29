@@ -1,0 +1,129 @@
+<!--디비 관리자,사용자 공용-->
+<head>
+<title>텍코드 관리자페이지입니다</title>
+<meta charset="utf-8">
+<LINK href="/admin/style.css" rel="StyleSheet" title="style" type="text/css">
+<script language=javascript src='/include/function.js'></script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<script type="text/javascript">
+<!--
+	function check(){
+		var f=document.f;
+		if(trim(f.adminid.value)==""){
+			alert("아이디를 입력해주세요.");
+			f.adminid.focus();
+			return;
+		}
+		if(trim(f.adminpwd.value)==""){
+			alert("비밀번호를 입력해주세요.");
+			f.adminpwd.focus();
+			return;
+		}
+		f.target = "proc"
+		f.action = "log_ok.asp"
+		f.submit();
+	}
+
+
+	function check2(){
+		var f=document.f;
+		if(trim(f.adminid.value)==""){
+			alert("아이디를 입력해주세요.");
+			f.adminid.focus();
+			return;
+		}
+		if(trim(f.adminpwd.value)==""){
+			alert("비밀번호를 입력해주세요.");
+			f.adminpwd.focus();
+			return;
+		}
+		f.target = "proc"
+		f.action = "log_ok2.asp"
+		f.submit();
+	}
+//-->
+</script>
+<iframe name="proc" id="proc" src="" width="0" height="0" frameborder="0"></iframe>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+<form name="f" method="post">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="335" align="center" background="img/loginbg02.gif"><table width="500" height="335" border="0" cellspacing="0" cellpadding="0" background="img/loginbg.gif">
+          <tr>
+            <td height="133">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><!--로그인 테이블시작-->
+              <table width="330" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="24"><input name="adminid" type="text" onkeypress="check_key(check);" class="" style="width:150; border-width:0; border-style:solid; border-color:#d4d4d4; background-color:#d4d4d4; font-size: 9pt;font-color:#000000"></td>
+                  <td width="70" rowspan="2"><a href="javascript:check();"> <div style="width:60px; font-size:13px; font-weight:600; text-align:center; background-color:#000; color:#fff;">Old Home Admin</div></a></td>
+				  <td width="70" rowspan="2"><a href="javascript:check2();"><div style="width:60px; font-size:13px; font-weight:600; text-align:center; background-color:#000; color:#fff;"> New Home Admin</div></a></td>
+                </tr>
+                <tr>
+                  <td height="40"><input name="adminpwd" type="password" onkeypress="check_key(check);" class="" style="width:150; border-width:0; border-style:solid; border-color:#d4d4d4; background-color:#d4d4d4; font-size: 9pt;font-color:#000000"></td>
+                </tr>
+              </table>
+              <!--로그인 테이블 끝-->
+              <table width="450" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="24">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" style="padding-right:10">사이트 관리자 페이지로 접속하기 위한 관리자 로그인 페이지입니다.<br>
+                    관리자 아이디와 관리자 비밀번호를 입력하여 주시기기 바랍니다.</td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td height="72">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+ <form>
+</table>
